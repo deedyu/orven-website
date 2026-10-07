@@ -1,0 +1,46 @@
+.brand-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 7vw, 8rem);
+  align-items: start;
+  padding-block: clamp(6.5rem, 16vh, 11rem);
+}
+
+.brand h2 {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 300;
+  letter-spacing: 0.045em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  max-width: 9ch;
+}
+
+.brand-text {
+  max-width: 36em;
+  padding-top: clamp(2.5rem, 10vh, 7.5rem);
+}
+
+.brand-copy {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+.brand-core {
+  margin-top: 1.75rem;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 860px) {
+  .brand-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-block: clamp(4.5rem, 12vh, 6.5rem);
+  }
+
+  .brand-text {
+    padding-top: 0;
+  }
+}

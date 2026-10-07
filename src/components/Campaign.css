@@ -1,0 +1,45 @@
+.campaign {
+  padding-top: clamp(2rem, 6vh, 4rem);
+  padding-bottom: clamp(5rem, 12vh, 9rem);
+}
+
+.campaign-copy h2 {
+  max-width: 10ch;
+  font-size: clamp(3.2rem, 8vw, 7.15rem);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.campaign-copy p {
+  margin-top: 1.4rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+}
+
+.campaign-visual {
+  margin-top: clamp(2.4rem, 6vh, 4.25rem);
+  overflow: hidden;
+  background: #e9e3d8;
+}
+
+.campaign-visual .media-fallback,
+.campaign-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.campaign-caption {
+  margin-top: 0.9rem;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .campaign-visual .media-fallback,
+  .campaign-visual img {
+    aspect-ratio: 4 / 3;
+  }
+}

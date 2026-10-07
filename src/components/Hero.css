@@ -1,0 +1,21 @@
+.hero-visual {
+  position: relative;
+  width: min(1920px, 100%);
+  margin-inline: auto;
+  height: auto;
+}
+
+.hero-visual-move,
+.hero-visual-move.is-parallax {
+  height: auto;
+}
+
+.hero-visual .media-fallback,
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1832 / 859;
+  object-fit: cover;
+  object-position: center center;
+}

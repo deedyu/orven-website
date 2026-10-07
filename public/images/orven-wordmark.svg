@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#FFFFFF"/>
+  <text
+    x="800"
+    y="500"
+    fill="#111111"
+    font-family="Neue Haas Grotesk Display Pro, Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="188"
+    font-weight="400"
+    letter-spacing="18"
+    text-anchor="middle"
+    dominant-baseline="middle">ORVEN</text>
+</svg>
