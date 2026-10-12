@@ -23,9 +23,52 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding-inline: var(--gutter);
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.15rem;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.rail-scroller::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+
+.rail-linebar {
+  position: relative;
+  height: 1px;
+  margin: 0.85rem var(--gutter) 0;
+  background: rgba(22, 22, 22, 0.16);
+}
+
+.rail-linebar span {
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background: var(--ink);
+}
+
+.rail-scroller.is-double {
+  gap: clamp(1.15rem, 2vw, 1.75rem);
+}
+
+.rail-pair {
+  display: flex;
+  flex: 0 0 calc((100vw - (2 * var(--gutter)) - (3 * clamp(1.15rem, 2vw, 1.75rem))) / 4);
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.6vw, 2.15rem);
+  min-width: 15.5rem;
+  scroll-snap-align: start;
+}
+
+.rail-scroller.is-double .rail-item {
+  flex: none;
+  width: 100%;
+  min-width: 0;
+  scroll-snap-align: none;
+}
+
+.rail-scroller.is-double .rail-meta {
+  flex-wrap: wrap;
 }
 
 .rail-scroller:focus-visible {

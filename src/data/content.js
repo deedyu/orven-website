@@ -111,7 +111,7 @@ export const fragrances = [
     keywords: ["투명함", "아침", "얇은 천"],
     colors: ["#F5F3EB", "#E8E2D4", "#CCD1D0"],
     colorNames: ["Pearl White", "Ivory", "Mist Grey"],
-    tags: ["perfume", "best", "new"],
+    tags: ["perfume", "best"],
     src: "/images/veil-studio.png?v=4",
     alt: "ORVEN VEIL perfume bottle, pale citrus musk",
     gallery: [
@@ -185,7 +185,7 @@ export const fragrances = [
     keywords: ["해풍", "소금 자국", "건조함"],
     colors: ["#B5C9D2", "#ECEEE8", "#969D99"],
     colorNames: ["Mineral Blue", "Salt White", "Drift Grey"],
-    tags: ["perfume", "new"],
+    tags: ["perfume"],
     src: "/images/salt-air-studio.png?v=4",
     alt: "ORVEN SALT AIR perfume bottle, pale mineral blue liquid",
     gallery: [
@@ -477,6 +477,36 @@ export const extensions = [
 ];
 
 export const catalog = [...fragrances, ...extensions];
+
+const registeredOn = {
+  veil: "2026-09-23",
+  grove: "2026-09-23",
+  salt: "2026-09-23",
+  suede: "2026-09-23",
+  ember: "2026-09-23",
+  "veil-hand": "2026-10-07",
+  "grove-hand": "2026-10-07",
+  "salt-hand": "2026-10-07",
+  "suede-hand": "2026-10-07",
+  "ember-hand": "2026-10-07",
+  "lip-stick": "2026-10-08",
+  "lip-pot": "2026-10-08",
+  "lip-tube": "2026-10-08",
+  "petal-wash": "2026-10-08",
+  "zest-wash": "2026-10-08",
+  "linen-wash": "2026-10-08",
+};
+
+export function isNewArrival(item, now = new Date()) {
+  if (!item || item.placeholder) return false;
+  const raw = registeredOn[item.id];
+  if (!raw) return false;
+  const registered = new Date(`${raw}T00:00:00`);
+  const cutoff = new Date(now);
+  cutoff.setMonth(cutoff.getMonth() - 1);
+  cutoff.setHours(0, 0, 0, 0);
+  return registered >= cutoff;
+}
 
 export const pages = {
   loginTitle: "로그인",

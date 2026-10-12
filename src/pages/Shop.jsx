@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { catalog, pages, shopNav } from "../data/content.js";
+import { catalog, isNewArrival, pages, shopNav } from "../data/content.js";
 import { useCart } from "../context/CartContext.jsx";
 import { BagIcon } from "../components/Icons.jsx";
 import Media from "../components/Media.jsx";
@@ -37,7 +37,9 @@ export default function Shop() {
 
   const items = useMemo(() => {
     const filtered = catalog.filter((item) => {
-      const byCategory = category === "all" || item.tags?.includes(category);
+      const byCategory =
+        category === "all" ||
+        (category === "new" ? isNewArrival(item) : item.tags?.includes(category));
       if (!byCategory) return false;
       if (!query) return true;
       const hay = [item.name, item.product, item.family, item.notes].filter(Boolean).join(" ").toLowerCase();

@@ -27,6 +27,21 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--ink);
 }
 
 .qty-step {

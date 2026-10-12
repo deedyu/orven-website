@@ -7,13 +7,14 @@ export default function Home() {
     <>
       <Hero />
       <NewCollection />
-      <ProductRail id="best" titleId="best-title" title="Best" tag="best" label="베스트" />
+      <ProductRail id="best" titleId="best-title" title="Best" tag="best" label="베스트" limit={5} />
       <ProductRail
         id="new"
         titleId="new-title"
         title="New Arrivals"
         tag="new"
         label="신상품"
+        rows={2}
       />
     </>
   );
